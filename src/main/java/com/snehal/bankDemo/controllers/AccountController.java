@@ -1,7 +1,9 @@
 package com.snehal.bankDemo.controllers;
 
+import com.snehal.bankDemo.dtos.AccountDto;
 import com.snehal.bankDemo.entities.Accounts;
 import com.snehal.bankDemo.services.AccountService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -11,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/account")
+@Tag(name="Account API's")
 public class AccountController {
 
     @Autowired
@@ -29,7 +32,8 @@ public class AccountController {
     }
 
     @PostMapping("/create/{id}")
-    public ResponseEntity<Accounts> createAccount(@RequestBody Accounts account, @PathVariable Long id) {
+    public ResponseEntity<Accounts> createAccount(@RequestBody AccountDto accountDto, @PathVariable Long id) {
+        Accounts account = AccountDto.accountDtoToAccount(accountDto);
         return ResponseEntity.ok(accountService.createAccount(account, id));
     }
 

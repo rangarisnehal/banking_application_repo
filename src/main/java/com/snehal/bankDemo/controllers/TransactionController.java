@@ -2,6 +2,7 @@ package com.snehal.bankDemo.controllers;
 
 import com.snehal.bankDemo.entities.Transactions;
 import com.snehal.bankDemo.services.TransactionService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/transaction")
+@Tag(name="Transaction API's")
 public class TransactionController {
 
     @Autowired

@@ -14,8 +14,8 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI springShopOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("SpringShop API")
-                        .description("Spring shop sample application")
+                .info(new Info().title("Banking Application Api's")
+                        .description("This application having the api's for the bank demonstration.")
                         .version("v0.0.1")
                         )
                 .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))

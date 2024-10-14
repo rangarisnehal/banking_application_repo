@@ -3,6 +3,7 @@ package com.snehal.bankDemo.controllers;
 import com.snehal.bankDemo.models.LoginRequest;
 import com.snehal.bankDemo.models.LoginResponse;
 import com.snehal.bankDemo.jwt.JwtUtils;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/auth")
+@Tag(name="Login API's")
 public class AuthController {
 
     @Autowired
